@@ -50,7 +50,7 @@ theme_mode:
 
 cdn:
 
-avatar:
+avatar: /assets/images/avatar.jpg
 
 social_preview_image: /assets/img/preview.png # <- You can replace with your image file under /assets/img/
 
