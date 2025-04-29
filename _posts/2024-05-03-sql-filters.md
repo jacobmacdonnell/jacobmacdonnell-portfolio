@@ -1,7 +1,7 @@
 ---
 title: Applying Filters to SQL Queries
 date: 2024-05-03
-categories: [Data Analysis]
+categories: [Projects, Data Analysis]
 tags: []
 ---
 
