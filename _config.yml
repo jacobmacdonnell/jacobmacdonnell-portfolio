@@ -8,7 +8,8 @@ tagline: Cybersecurity Portfolio
 description: >-
   Cybersecurity portfolio featuring writeups, projects, and technical explorations by Jacob Macdonnell.
 
-url: "https://jacobmacdonnell.github.io"
+url: "https://jacobmacdonnell.com"
+baseurl: ""
 
 github:
   username: jacobmacdonnell
