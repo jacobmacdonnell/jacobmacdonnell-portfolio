@@ -41,7 +41,7 @@ By Google on Coursera *(Obtained: July 2024)*
 
 ## Projects
 
-Check out my [cybersecurity projects](/categories/cybersecurity/) to see examples of my technical skills in action, including:
+Check out my [cybersecurity projects](/categories) to see examples of my technical skills in action, including:
 
 - Linux file permissions management
 - Python automation for security tasks
