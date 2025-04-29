@@ -2,7 +2,7 @@
 title: Python Algorithm for File Updates
 date: 2024-07-03
 categories: [Projects, Automation]
-tags: []
+tags: [Python, Linux]
 ---
 
 ## Project Overview
