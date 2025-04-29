@@ -2,7 +2,7 @@
 title: Applying Filters to SQL Queries
 date: 2024-05-03
 categories: [Projects, Data Analysis]
-tags: []
+tags: [SQL, Linux]
 ---
 
 ## Project Overview
