@@ -1,8 +1,8 @@
 ---
 title: Python Algorithm for File Updates
-date: 2024-07-03 13:00:00 +0000
-categories: [Cybersecurity, Automation]
-tags: [python, security, automation, network-security]
+date: 2024-07-03
+categories: [Automation]
+tags: []
 ---
 
 ## Project Overview
