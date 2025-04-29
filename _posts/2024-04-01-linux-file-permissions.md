@@ -1,8 +1,8 @@
 ---
 title: Editing File Permissions in Linux
-date: 2024-04-01 12:00:00 +0000
-categories: [Cybersecurity, Linux]
-tags: [bash, linux, security, file-management]
+date: 2024-04-01
+categories: [File Permissions]
+tags: []
 ---
 
 ## Project Overview

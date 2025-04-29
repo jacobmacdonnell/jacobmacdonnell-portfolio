@@ -1,8 +1,8 @@
 ---
 title: Applying Filters to SQL Queries
-date: 2024-05-03 14:00:00 +0000
-categories: [Cybersecurity, Data Analysis]
-tags: [sql, linux, security, data-analysis]
+date: 2024-05-03
+categories: [Data Analysis]
+tags: []
 ---
 
 ## Project Overview
