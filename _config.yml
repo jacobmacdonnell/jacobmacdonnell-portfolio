@@ -50,9 +50,9 @@ theme_mode:
 
 cdn:
 
-avatar: /assets/images/avatar.jpg
+avatar: /assets/img/avatar.jpg
 
-social_preview_image: /assets/images/avatar.jpg
+social_preview_image: /assets/img/avatar.jpg
 
 toc: true
 
