@@ -1,0 +1,12 @@
+# Redirect www to non-www
+https://www.jacobmacdonnell.com/* https://jacobmacdonnell.com/:splat 301!
+https://www.jacobmacdonnell.ca/* https://jacobmacdonnell.com/:splat 301!
+
+# Redirect .ca to .com
+https://jacobmacdonnell.ca/* https://jacobmacdonnell.com/:splat 301!
+
+# Force HTTPS (Netlify does this by default, but just in case)
+http://jacobmacdonnell.com/* https://jacobmacdonnell.com/:splat 301!
+http://jacobmacdonnell.ca/* https://jacobmacdonnell.com/:splat 301!
+http://www.jacobmacdonnell.com/* https://jacobmacdonnell.com/:splat 301!
+http://www.jacobmacdonnell.ca/* https://jacobmacdonnell.com/:splat 301!
