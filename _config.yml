@@ -4,18 +4,19 @@ lang: en
 timezone: America/Vancouver
 
 title: Jacob Macdonnell
-tagline: Cybersecurity Portfolio and Projects
+tagline: Cybersecurity Portfolio
 description: >-
-  A cybersecurity portfolio featuring writeups, projects, and technical explorations by Jacob Macdonnell.
+  Cybersecurity portfolio featuring writeups, projects, and technical explorations by Jacob Macdonnell.
 
-url: "https://jacobmacdonnell.github.io"
+url: "https://jacobmacdonnell.com"
+baseurl: ""
 
 github:
   username: jacobmacdonnell
 
 social:
   name: Jacob Macdonnell
-  email: jacobmacdonnell1@gmail.com
+  email:
   links:
     - https://github.com/jacobmacdonnell
 
@@ -50,9 +51,9 @@ theme_mode:
 
 cdn:
 
-avatar:
+avatar: /assets/img/avatar.jpg
 
-social_preview_image: /assets/img/preview.png # <- You can replace with your image file under /assets/img/
+social_preview_image: /assets/img/avatar.jpg
 
 toc: true
 
