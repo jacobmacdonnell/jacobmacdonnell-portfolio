@@ -29,7 +29,7 @@ Includes the following GIAC certifications:
 - GPEN *(Expected: Apr 2026)*
 
 ### Google Cybersecurity Professional Certificate
-By Google on Coursera *(Obtained: July 2024)*
+By Google on Coursera (Obtained: July 2024)
 
 ## Technical Skills
 
