@@ -32,12 +32,11 @@ Includes the following GIAC certifications:
 By Google on Coursera (Obtained: July 2024)
 
 ## Technical Skills
-
-- **Security Tools**: Wireshark, Nmap, Metasploit, Burp Suite
-- **Operating Systems**: Linux (Ubuntu, Kali), Windows
-- **Languages**: Python, Bash, SQL
-- **Analysis**: Network Traffic Analysis, Log Analysis, Vulnerability Assessment
-- **Security Concepts**: Network Security, Web Security, Incident Response
+- **Languages**: Python (Basic), SQL (Basic), C (Basic)
+- **Security Tools**: Wireshark, Nmap, Gobuster, SIEM (Familiarity), Firewalls, IDS/IPS, Vulnerability Scanning (Familiarity)
+- **Cloud & DevOps**: Docker, Google Cloud Platform (GCP), Supabase, Familiarity with cloud authentication setups
+- **Developer Tools & OS**: Linux (CLI), Windows, MacOS, VS Code, Cursor (Generative AI), Git
+- **Other**: PC Hardware Assembly, Technical Troubleshooting
 
 ## Projects
 
