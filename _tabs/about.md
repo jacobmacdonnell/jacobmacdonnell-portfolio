@@ -23,7 +23,7 @@ The University of British Columbia
 SANS Technology Institute
 
 Includes the following GIAC certifications:
-- GFACT (Obtained: Apr 2025)
+- GFACT
 - GSEC *(Expected: September 2025)*
 - GCIH *(Expected: Janruary 2025)*
 - GPEN *(Expected: April 2026)*
