@@ -24,9 +24,9 @@ SANS Technology Institute
 
 Includes the following GIAC certifications:
 - GFACT (Obtained: Apr 2025)
-- GSEC *(Expected: Aug 2025)*
-- GCIH *(Expected: Dec 2025)*
-- GPEN *(Expected: Apr 2026)*
+- GSEC *(Expected: September 2025)*
+- GCIH *(Expected: Janruary 2025)*
+- GPEN *(Expected: April 2026)*
 
 ### Google Cybersecurity Professional Certificate
 By Google on Coursera (Obtained: July 2024)
