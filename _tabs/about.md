@@ -21,10 +21,8 @@ The University of British Columbia
 
 ### Applied Cybersecurity Undergraduate Certificate (ACS)
 SANS Technology Institute
-
-- Includes the following GIAC certifications:
   - GFACT
-  - GSEC *(Expected: September 2025)*
+  - GSEC
   - GCIH *(Expected: Janruary 2025)*
   - GPEN *(Expected: April 2026)*
 
