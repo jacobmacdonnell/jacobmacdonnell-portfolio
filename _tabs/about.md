@@ -23,7 +23,7 @@ The University of British Columbia
 SANS Technology Institute
   - GFACT
   - GSEC
-  - GCIH *(Expected: Janruary 2025)*
+  - GCIH *(Expected: January 2025)*
   - GPEN *(Expected: April 2026)*
 
 ### Google Cybersecurity Professional Certificate
