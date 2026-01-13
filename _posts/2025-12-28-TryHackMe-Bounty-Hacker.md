@@ -1,5 +1,5 @@
 ---
-title: TryHackMe Bounty Hacker Writeup
+title: "TryHackMe Bounty Hacker Writeup"
 date: 2025-12-28
 categories: [CTF Competitions, TryHackMe]
 tags: [CTF Challenges, Linux, Privilege Escalation, FTP, SSH]
@@ -89,3 +89,4 @@ This room was a good example of how small misconfigurations chain together:
 3. **An unsafe sudo rule** allowed full privilege escalation
 
 Nothing advanced was required. Just enumeration and following what the system exposed.
+

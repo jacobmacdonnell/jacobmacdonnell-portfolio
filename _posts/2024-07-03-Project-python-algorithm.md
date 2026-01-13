@@ -1,5 +1,5 @@
 ---
-title: Python Algorithm for File Updates
+title: "Python Algorithm for File Updates"
 date: 2024-07-03
 categories: [Projects, Automation]
 tags: [Python, Linux]
@@ -98,3 +98,4 @@ This project showcased several important programming skills:
 This project demonstrates how Python can be used to automate and improve the management of IP access control lists. By developing a robust algorithm for IP list updates, I was able to create a reliable solution that reduces manual errors and ensures consistent data formatting.
 
 The solution successfully addressed the organization's needs for efficient IP list management while maintaining data integrity and proper file handling practices. The modular design also allows for easy expansion to support additional features or more complex access control rules in the future.
+
