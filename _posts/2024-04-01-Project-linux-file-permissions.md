@@ -1,5 +1,5 @@
 ---
-title: Editing File Permissions in Linux
+title: "Editing File Permissions in Linux"
 date: 2024-04-01
 categories: [Projects, File Permissions]
 tags: [Linux]
