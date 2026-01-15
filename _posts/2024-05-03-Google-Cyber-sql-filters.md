@@ -1,8 +1,8 @@
 ---
 title: "Applying Filters to SQL Queries"
 date: 2024-05-03
-categories: [Projects, Data Analysis]
-tags: [SQL, Linux]
+categories: [Blue Team, Threat Hunting]
+tags: [SQL, Linux, Data Analysis, Google Cybersecurity]
 ---
 
 ## Project Overview

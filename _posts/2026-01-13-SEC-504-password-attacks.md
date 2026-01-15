@@ -3,7 +3,7 @@ layout: post
 title: "SEC-504: Password Attacks & Credential Harvesting"
 date: 2026-01-13
 categories: [Red Team, Password Cracking]
-tags: [Hashcat, Responder, Password Spraying, Legba, Active Directory]
+tags: [Hashcat, Responder, Password Spraying, Legba, Active Directory, GCIH]
 ---
 
 In the SANS SEC504 course, I explored the techniques used to capture and crack credentials. Credentials are the keys to the kingdom; acquiring them allows an attacker to bypass sophisticated exploits and simply "log in."

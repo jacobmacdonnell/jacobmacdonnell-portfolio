@@ -1,8 +1,8 @@
 ---
 title: "Solving 'Big Zip' on picoCTF"
 date: 2025-03-05
-categories: [CTF Competitions, picoCTF]
-tags: [CTF Challenges, Linux]
+categories: [CTF Competitions, Forensics]
+tags: [CTF Challenges, Linux, picoCTF]
 ---
 
 ## Challenge Overview
