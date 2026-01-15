@@ -8,23 +8,46 @@ Explore detailed breakdowns of my projects, CTF's, and more!
 
 ## 📝 How to Add New Posts
 
-All writeups must be placed in the `_posts` directory and follow this strict naming convention:
+To maintain consistency, all new writeups must follow these strict standards.
 
-`YYYY-MM-DD-SOURCE-topic-name.md`
+### 1. File Naming Convention
+Files must be placed in `_posts/` and follow this format:
+`YYYY-MM-DD-Source-topic-name.md`
 
-### Naming Examples:
-*   **SEC-504 Lab:** `2026-01-13-SEC-504-digital-forensics.md`
-*   **TryHackMe:** `2025-12-28-TryHackMe-Bounty-Hacker.md`
-*   **NCL:** `2025-04-28-NCL-spring-2025.md`
+*   **Source:** Capitalized (e.g., `GCIH`, `Google-Cybersecurity`, `PicoCTF`, `TryHackMe`, `NCL`).
+*   **Topic:** Lowercase, kebab-case (e.g., `linux-file-permissions`, `advanced-exploitation`).
 
-### Frontmatter Template:
+**Examples:**
+*   `2026-01-13-GCIH-advanced-exploitation.md`
+*   `2024-04-01-Google-Cybersecurity-linux-file-permissions.md`
+*   `2025-03-05-PicoCTF-big-zip.md`
+
+### 2. Front Matter Template
 Every post must start with this YAML header:
+
 ```yaml
 ---
 layout: post
-title: "SEC-504: Lab Title Here"
-date: 2026-01-13
-categories: [Red Team, Web Security]
-tags: [Tool1, Tool2, Concept1, Concept2]
+title: "Source: Topic Name"
+date: YYYY-MM-DD
+categories: [Functional Domain, Activity]
+tags: [Source, Tool1, Tool2, Concept]
 ---
 ```
+
+**Title Format:**
+*   Always use `Source: Topic` format.
+*   *Example:* `title: "GCIH: Web Application Pentesting"`
+
+**Categories:**
+Choose **one** primary functional domain:
+*   `[Red Team, Exploitation]`
+*   `[Red Team, Reconnaissance]`
+*   `[Blue Team, DFIR]`
+*   `[Blue Team, Threat Hunting]`
+*   `[CTF Competitions, Forensics]`
+*   `[CTF Competitions, Walkthroughs]`
+
+**Tags:**
+*   Always include the **Source** as a tag (e.g., `GCIH`, `Google Cybersecurity`, `picoCTF`).
+*   Include specific tools and concepts (e.g., `Nmap`, `Wireshark`, `Linux`, `SQL`).
