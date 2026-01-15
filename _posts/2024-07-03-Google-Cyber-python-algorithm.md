@@ -1,5 +1,5 @@
 ---
-title: "Python Algorithm for File Updates"
+title: "Google Cybersecurity: Python Automation"
 date: 2024-07-03
 categories: [Blue Team, Security Automation]
 tags: [Python, Linux, Scripting, Google Cybersecurity]
