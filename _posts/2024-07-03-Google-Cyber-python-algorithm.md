@@ -1,8 +1,8 @@
 ---
 title: "Python Algorithm for File Updates"
 date: 2024-07-03
-categories: [Projects, Automation]
-tags: [Python, Linux]
+categories: [Blue Team, Security Automation]
+tags: [Python, Linux, Scripting, Google Cybersecurity]
 ---
 
 ## Project Overview
