@@ -1,5 +1,5 @@
 ---
-title: "Editing File Permissions in Linux"
+title: "Google Cybersecurity: Linux File Permissions"
 date: 2024-04-01
 categories: [Blue Team, System Hardening]
 tags: [Linux, File Permissions, Google Cybersecurity]

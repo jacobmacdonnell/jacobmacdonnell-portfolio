@@ -1,5 +1,5 @@
 ---
-title: "Applying Filters to SQL Queries"
+title: "Google Cybersecurity: SQL Query Filters"
 date: 2024-05-03
 categories: [Blue Team, Threat Hunting]
 tags: [SQL, Linux, Data Analysis, Google Cybersecurity]
