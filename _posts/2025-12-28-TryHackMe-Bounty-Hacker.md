@@ -1,8 +1,8 @@
 ---
 title: "TryHackMe Bounty Hacker Writeup"
 date: 2025-12-28
-categories: [CTF Competitions, TryHackMe]
-tags: [CTF Challenges, Linux, Privilege Escalation, FTP, SSH]
+categories: [CTF Competitions, Walkthroughs]
+tags: [TryHackMe, CTF Challenges, Linux, Privilege Escalation, FTP, SSH]
 ---
 
 ## Challenge Overview
