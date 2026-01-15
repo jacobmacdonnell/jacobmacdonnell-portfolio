@@ -3,7 +3,7 @@ layout: post
 title: "SEC-504: Digital Forensics & Incident Response"
 date: 2026-01-13
 categories: [Blue Team, DFIR]
-tags: [Forensics, PowerShell, Volatility, Hayabusa, Threat Hunting, RITA, Malware Analysis]
+tags: [Forensics, PowerShell, Volatility, Hayabusa, Threat Hunting, RITA, Malware Analysis, GCIH]
 ---
 
 In the SANS SEC504 course, I conducted a full-scope investigation into a simulated ransomware attack by the "Midnite Meerkats" threat group. This series of labs required pivoting from live system analysis to network forensics, memory forensics, malware analysis, and finally threat hunting.

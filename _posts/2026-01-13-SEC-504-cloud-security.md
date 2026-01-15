@@ -3,7 +3,7 @@ layout: post
 title: "SEC-504: Cloud Security & AWS Exploitation"
 date: 2026-01-13
 categories: [Red Team, Cloud Security]
-tags: [AWS, S3, SSRF, IMDS, ScoutSuite, Pentesting, Masscan]
+tags: [AWS, S3, SSRF, IMDS, ScoutSuite, Pentesting, Masscan, GCIH]
 ---
 
 In the SANS SEC504 course, I focused on the unique misconfigurations found in cloud environments, specifically AWS S3 buckets and Cloud metadata services. The goal was to understand how simple configuration errors can lead to total data exposure.
