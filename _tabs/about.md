@@ -30,9 +30,9 @@ SANS Technology Institute
 By Google on Coursera (Obtained: Feb 2024)
 
 ## Technical Skills
-- **Languages**: Python (Basic), SQL (Basic), C (Basic)
+- **Languages**: Python (Basic), SQL (Basic)
 - **Security Tools**: Wireshark, Nmap, Gobuster, SIEM (Familiarity), Firewalls, IDS/IPS, Vulnerability Scanning (Familiarity)
-- **Cloud & DevOps**: Docker, Google Cloud Platform (GCP), Supabase, Familiarity with cloud authentication setups
+- **Cloud & DevOps**: Docker, AWS, Google Cloud Platform (GCP), Supabase, Familiarity with cloud authentication setups
 - **Developer Tools & OS**: Linux (CLI), Windows, MacOS, VS Code, Cursor (Generative AI), Git
 - **Other**: PC Hardware Assembly, Technical Troubleshooting
 
