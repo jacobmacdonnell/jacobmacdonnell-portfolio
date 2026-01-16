@@ -15,6 +15,7 @@ Proven competitor in the **National Cyber League (NCL)**, ranking **521st out of
 Skilled in technical security, organizational risk analysis, and communication, with a proven track record of leadership and problem-solving through entrepreneurial ventures. Eager to protect digital assets and enhance security postures by applying business-driven solutions and innovative cybersecurity strategies.
 
 ## Education and Certifications
+**Verified Certifications:** https://www.credly.com/users/jacobmacdonnell
 
 ### B.Mgt (Honours), Minor in Psychology
 The University of British Columbia
