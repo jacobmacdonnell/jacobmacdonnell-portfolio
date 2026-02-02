@@ -8,7 +8,7 @@ Explore detailed breakdowns of my projects, CTF's, and more!
 
 ## 📝 How to Add New Posts
 
-To maintain consistency, all new writeups must follow these strict standards.
+To maintain consistency, all new write-ups must follow these strict standards.
 
 ### 1. File Naming Convention
 Files must be placed in `_posts/` and follow this format:
