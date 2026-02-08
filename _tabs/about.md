@@ -20,11 +20,13 @@ Skilled in technical security, organizational risk analysis, and communication, 
 ### B.Mgt (Honours), Minor in Psychology
 The University of British Columbia
 
-### Applied Cybersecurity Undergraduate Certificate (ACS)
+### Applied Cybersecurity Undergraduate Certificate (ACS) 
 SANS Technology Institute
-  - GFACT
-  - GSEC
-  - GCIH
+
+### Certifications
+  - GCIH (Certified)
+  - GSEC (Certified)
+  - GFACT (Certified)
   - GPEN *(Expected: May 2026)*
 
 ### Google Cybersecurity Professional Certificate
