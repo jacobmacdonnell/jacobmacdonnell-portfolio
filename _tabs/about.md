@@ -6,38 +6,28 @@ order: 4
 
 ## Professional Summary
 
-Highly motivated aspiring cybersecurity professional with a strong foundation in **Business Management** and **Psychology**, integrating technical expertise with strategic insights to solve complex security challenges.
+I’m a GIAC-certified Incident Handler (GCIH, GSEC) and Security Analyst with hands-on experience in incident response, endpoint forensics, and threat hunting through SANS SEC504 DFIR labs. I combine technical investigation skills with a background in Business Management and Psychology to communicate security findings clearly during high-pressure incidents.
 
-Currently completing the SANS Institute's Applied Cybersecurity Certificate (ACS) and earning prestigious GIAC certifications (**GFACT**, **GSEC**, **GCIH**, **GPEN**). Also certified with the **Google Cybersecurity Professional Certificate**.
+I ranked in the top 2% of the National Cyber League team competition and focus on log analysis, network traffic investigation, and practical DFIR workflows. I’m currently completing the SANS Applied Cybersecurity Certificate (ACS) and pursuing GCFA (Expected May 2026).
 
-Proven competitor in the **National Cyber League (NCL)**, ranking **521st out of 8569** participants (**Top 6%**) individually and securing **63rd out of 4798** in the team event (**Top 2%**), with hands-on experience in areas such as network traffic analysis, forensics, and web exploitation.
+## Education & Certifications
 
-Skilled in technical security, organizational risk analysis, and communication, with a proven track record of leadership and problem-solving through entrepreneurial ventures. Eager to protect digital assets and enhance security postures by applying business-driven solutions and innovative cybersecurity strategies.
+**Applied Cybersecurity Certificate (ACS)** – SANS Technology Institute (In Progress, GPA: 4.0)
 
-## Education and Certifications
-**Verified Certifications:** https://www.credly.com/users/jacobmacdonnell
+**GIAC Certifications:** GCIH, GSEC, GFACT | GCFA (Expected May 2026)
 
-### B.Mgt (Honours), Minor in Psychology
-The University of British Columbia
+**Google Cybersecurity Professional Certificate:** Completed Feb 2024
 
-### Applied Cybersecurity Undergraduate Certificate (ACS) 
-SANS Technology Institute
-
-### Certifications
-  - GCIH (Certified)
-  - GSEC (Certified)
-  - GFACT (Certified)
-  - GPEN *(Expected: May 2026)*
-
-### Google Cybersecurity Professional Certificate
-By Google on Coursera (Obtained: Feb 2024)
+**B.Mgmt (Honours), Minor in Psychology** – University of British Columbia (GPA: 3.7/4.0)
 
 ## Technical Skills
-- **Languages**: Python (Basic), SQL (Basic)
-- **Security Tools**: Wireshark, Nmap, Gobuster, SIEM (Familiarity), Firewalls, IDS/IPS, Vulnerability Scanning (Familiarity)
-- **Cloud & DevOps**: Docker, AWS, Google Cloud Platform (GCP), Supabase, Familiarity with cloud authentication setups
-- **Developer Tools & OS**: Linux (CLI), Windows, MacOS, VS Code, Cursor (Generative AI), Git
-- **Other**: PC Hardware Assembly, Technical Troubleshooting
+
+* **Incident Response & DFIR:** Endpoint triage, threat hunting, log-based investigations
+* **Network Defence:** Zeek, RITA, Wireshark, Tcpdump, Nmap
+* **SIEM & Detection:** Splunk (Basic), Chronicle, SQL
+* **Forensics Tools:** Volatility, Hayabusa, Procmon, Regshot, Timeline Explorer, CyberChef
+* **Scripting:** PowerShell, Python, Bash
+* **Platforms:** Windows, Linux (CLI)
 
 ## Projects
 
