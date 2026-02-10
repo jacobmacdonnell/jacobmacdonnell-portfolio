@@ -14,7 +14,7 @@ I ranked in the **top 2% of the National Cyber League** team competition and foc
 
 **Applied Cybersecurity Certificate (ACS)** – SANS Technology Institute (In Progress, GPA: 4.0)
 
-- **GIAC Certifications:** GCIH, GSEC, GFACT | GCFA (Expected May 2026)
+* **GIAC Certifications:** GCIH, GSEC, GFACT | GCFA (Expected May 2026)
 
 **Google Cybersecurity Professional Certificate:** Completed Feb 2024
 
