@@ -6,9 +6,9 @@ order: 4
 
 ## Professional Summary
 
-I’m a GIAC-certified Incident Handler (GCIH, GSEC) and Security Analyst with hands-on experience in incident response, endpoint forensics, and threat hunting through SANS SEC504 DFIR labs. I combine technical investigation skills with a background in Business Management and Psychology to communicate security findings clearly during high-pressure incidents.
+I’m a **GIAC-certified Incident Handler (GCIH, GSEC)** and Security Analyst with hands-on experience in **incident response, endpoint forensics, and threat hunting** through SANS SEC504 DFIR labs. I combine technical investigation skills with a background in Business Management and Psychology to communicate security findings clearly during high-pressure incidents.
 
-I ranked in the top 2% of the National Cyber League team competition and focus on log analysis, network traffic investigation, and practical DFIR workflows. I’m currently completing the SANS Applied Cybersecurity Certificate (ACS) and pursuing GCFA (Expected May 2026).
+I ranked in the **top 2% of the National Cyber League** team competition and focused on log analysis, network traffic investigation, and practical DFIR workflows. I’m currently completing the SANS Applied Cybersecurity Certificate (ACS) and pursuing GCFA (Expected May 2026).
 
 ## Education & Certifications
 
