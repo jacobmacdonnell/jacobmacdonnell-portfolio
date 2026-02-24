@@ -10,11 +10,9 @@ Entry-level SOC Analyst with hands-on experience in SIEM log correlation, alert 
 Investigated ransomware and C2 activity in lab and simulation workflows using Splunk, Zeek, Wireshark, and Volatility.
 Comfortable working a ticket-driven alert lifecycle: acknowledge, investigate, document findings, escalate with context and severity, and close with resolution criteria.
 
-## Education and Certifications
-**Verified Certifications:** https://www.credly.com/users/jacobmacdonnell
+* **GIAC Certifications:** GCIH, GSEC, GFACT, GCFA (Expected May 2026)
 
-### B.Mgt (Honours), Minor in Psychology
-The University of British Columbia
+**Google Cybersecurity Professional Certificate:** Completed Feb 2024
 
 ### Applied Cybersecurity Certificate (ACS) - In Progress
 SANS Technology Institute
