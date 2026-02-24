@@ -4,9 +4,9 @@ lang: en
 timezone: America/Vancouver
 
 title: Jacob Macdonnell
-tagline: Cybersecurity Portfolio
+tagline: Security Operations Portfolio
 description: >-
-  Cybersecurity portfolio featuring writeups, projects, and technical explorations by Jacob Macdonnell.
+  Security Operations portfolio featuring alert triage investigations, incident documentation workflows, and defensive analysis by Jacob Macdonnell.
 
 url: "https://jacobmacdonnell.com"
 baseurl: ""
