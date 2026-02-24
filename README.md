@@ -16,7 +16,7 @@ This site reflects practical, operational work — not coursework summaries.
 
 ## How to Add New Posts
 
-To maintain consistency, all new writeups must follow these strict standards.
+To maintain consistency, all new write-ups must follow these strict standards.
 
 ### 1. File Naming Convention
 Files must be placed in `_posts/` and follow this format:
