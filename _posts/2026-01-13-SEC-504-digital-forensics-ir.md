@@ -2,7 +2,8 @@
 layout: post
 title: "SEC-504: Digital Forensics & Incident Response"
 date: 2026-01-13
-categories: [Blue Team, DFIR]
+categories: [Security Operations, Incident Investigation]
+pin: true
 tags: [Forensics, PowerShell, Volatility, Hayabusa, Threat Hunting, RITA, Malware Analysis, GCIH]
 ---
 

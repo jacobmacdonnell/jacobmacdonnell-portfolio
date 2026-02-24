@@ -1,12 +1,20 @@
 [![Netlify Status](https://api.netlify.com/api/v1/badges/7922f4d1-efe7-4cc4-9a93-d75b1fffc118/deploy-status)](https://jacobmacdonnell.com)
-# Jacob Macdonnell's Cybersecurity Portfolio 
+# Jacob Macdonnell – Security Operations Portfolio
 
-Welcome to my professional cybersecurity portfolio.  
-Explore detailed breakdowns of my projects, CTF's, and more!
+This portfolio documents applied Security Operations investigations, incident triage workflows, and hands-on defensive analysis.
 
-👉 **View here:** [jacobmacdonnell.com](https://jacobmacdonnell.com)
+Primary Focus:
+- Tier 1 SOC alert triage
+- Windows Event Log analysis
+- Escalation documentation
+- Investigation scoping
+- Incident response fundamentals
 
-## 📝 How to Add New Posts
+This site reflects practical, operational work — not coursework summaries.
+
+👉 View live: https://jacobmacdonnell.com
+
+## How to Add New Posts
 
 To maintain consistency, all new writeups must follow these strict standards.
 
@@ -45,6 +53,8 @@ Choose **one** primary functional domain:
 *   `[Red Team, Reconnaissance]`
 *   `[Blue Team, DFIR]`
 *   `[Blue Team, Threat Hunting]`
+*   `[Security Operations, Alert Triage]`
+*   `[Security Operations, Incident Investigation]`
 *   `[CTF Competitions, Forensics]`
 *   `[CTF Competitions, Walkthroughs]`
 
