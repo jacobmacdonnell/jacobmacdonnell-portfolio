@@ -6,44 +6,48 @@ order: 4
 
 ## Professional Summary
 
-I’m a **GIAC-certified Incident Handler (GCIH, GSEC)** and Security Analyst with hands-on experience in **incident response, endpoint forensics, and threat hunting** through SANS SEC504 DFIR labs. I combine technical investigation skills with a background in Business Management and Psychology to communicate security findings clearly during high-pressure incidents.
-
-I ranked in the **top 2% of the National Cyber League** team competition and focused on log analysis, network traffic investigation, and practical DFIR workflows. I’m currently completing the SANS Applied Cybersecurity Certificate (ACS) and pursuing GCFA (Expected May 2026).
-
-## Education & Certifications
-
-**Applied Cybersecurity Certificate (ACS)** – SANS Technology Institute (In Progress, GPA: 4.0)
+Entry-level SOC Analyst with hands-on experience in SIEM log correlation, alert triage, and network traffic analysis.
+Investigated ransomware and C2 activity in lab and simulation workflows using Splunk, Zeek, Wireshark, and Volatility.
+Comfortable working a ticket-driven alert lifecycle: acknowledge, investigate, document findings, escalate with context and severity, and close with resolution criteria.
 
 * **GIAC Certifications:** GCIH, GSEC, GFACT, GCFA (Expected May 2026)
 
 **Google Cybersecurity Professional Certificate:** Completed Feb 2024
 
-**B.Mgmt (Honours), Minor in Psychology** – University of British Columbia (GPA: 3.7/4.0)
+### Applied Cybersecurity Certificate (ACS) - In Progress
+SANS Technology Institute
+
+### GIAC Certifications
+- GCIH (92%)
+- GSEC
+- GFACT
+
+### Google Cybersecurity Professional Certificate
+Google / Coursera
 
 ## Technical Skills
-
-* **Incident Response & DFIR:** Endpoint triage, threat hunting, log-based investigations
-* **Network Defence:** Zeek, RITA, Wireshark, Tcpdump, Nmap
-* **SIEM & Detection:** Splunk (Basic), Chronicle, SQL
-* **Forensics Tools:** Volatility, Hayabusa, Procmon, Regshot, Timeline Explorer, CyberChef
-* **Scripting:** PowerShell, Python, Bash
-* **Platforms:** Windows, Linux (CLI)
+- **Security Operations:** Alert triage, event investigation, SIEM log search and correlation (Splunk SPL fundamentals), severity triage, escalation and closure criteria, ticket-based case documentation, Windows Event Log analysis, MITRE ATT&CK mapping, incident documentation procedures
+- **Network and Forensics:** Network traffic analysis (PCAP, Zeek, RITA), memory analysis (Volatility 3), forensic timeline reconstruction (Hayabusa, Sigma)
+- **Tools and Platforms:** Splunk, Zeek, RITA, Wireshark, Volatility 3, Hayabusa (Sigma), AWS CLI
+- **Systems and Scripting Familiarity:** Windows Server (Active Directory), Linux (REMnux, Kali), AWS, GCP, Python (basic scripting, code review), PowerShell (basic scripting), SQL (basic queries)
+- **AI and Documentation Tools:** Claude, Gemini, Codex
 
 ## Projects
 
-Check out my [cybersecurity projects](/categories) to see examples of my technical skills in action, including:
+Check out my [Security Operations posts](/categories/security-operations/) and [all categories](/categories/) for full writeups.
+
+### Enterprise Incident Response and Threat Hunting Simulation
+- Investigated simulated ransomware activity through live triage and memory analysis with Volatility 3.
+- Reconstructed execution chain (`ONENOTE.EXE -> cmd.exe -> powershell.exe`) to identify wiper behavior and scope compromise.
+- Detected low-and-slow C2 beaconing using RITA and Zeek timing analysis.
+- Expanded incident scope from one infected host to four through beacon correlation.
+- Produced structured incident reports with timeline, impacted assets, indicators of compromise, and recommended containment actions.
 
 ### National Cyber League (Spring 2025)
-**Ranked Top 2% (63rd/4,798 Teams)**
-- Specialized in **Network Traffic Analysis and Forensics**, identifying malicious C2 traffic and reconstructing attack timelines from PCAPs.
-- Executed challenges in **OSINT**, **Web Exploitation**, and **Cryptography**.
+- Ranked 521st out of 8,569 individually (Top 6%).
+- Ranked 63rd out of 4,798 teams (Top 1.3%).
+- Focused on network analysis and forensic challenge workflows under time constraints.
 
-### Enterprise Incident Response | SANS SEC504 (Falsimentis Simulation)
-- **Investigation**: Executed the full IR lifecycle to neutralize a multi-stage wiper/ransomware breach. Analyzed memory dumps with **Volatility 3** to identify malicious process trees and injected code.
-- **Network Forensics**: Reconstructed attack timelines by analyzing PCAPs and proxy logs to identify Command & Control (C2) channels and scope the extent of the breach.
-- **Threat Hunting**: Detected low-jitter C2 beacons using **RITA & Zeek**. Performed high-speed log analysis with **Hayabusa** to track lateral movement and persistence mechanisms.
-
-### Cloud & Web Exploitation | SANS SEC504 Lab Series
-- **Cloud Security**: Identified exposed assets via **Masscan/TLS-Scan**. Exploited SSRF vulnerabilities to compromise AWS IAM credentials and audited configurations using **ScoutSuite**.
-- **Offensive Operations**: Simulated adversary tradecraft including **AppLocker bypass** (Living off the Land), Command Injection, and browser hooking with **BeEF** to validate system hardening.
-- **Credential Assessment**: Audited network authentication by capturing NTLM hashes with **Responder** (LLMNR poisoning) and validating password complexity policies using **Hashcat** and password spraying.
+### Independent Lab Development and CTF Scenarios
+- Conducted Linux forensic investigations to identify malicious artifacts.
+- Analyzed privilege escalation paths and mapped attacker behavior to MITRE ATT&CK techniques.
