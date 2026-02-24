@@ -10,10 +10,6 @@ Entry-level SOC Analyst with hands-on experience in SIEM log correlation, alert 
 Investigated ransomware and C2 activity in lab and simulation workflows using Splunk, Zeek, Wireshark, and Volatility.
 Comfortable working a ticket-driven alert lifecycle: acknowledge, investigate, document findings, escalate with context and severity, and close with resolution criteria.
 
-* **GIAC Certifications:** GCIH, GSEC, GFACT, GCFA (Expected May 2026)
-
-**Google Cybersecurity Professional Certificate:** Completed Feb 2024
-
 ### Applied Cybersecurity Certificate (ACS) - In Progress
 SANS Technology Institute
 
@@ -24,6 +20,9 @@ SANS Technology Institute
 
 ### Google Cybersecurity Professional Certificate
 Google / Coursera
+
+### Bachelor of Management (Honours), Minor in Psychology 
+University of British Columbia (UBC)
 
 ## Technical Skills
 - **Security Operations:** Alert triage, event investigation, SIEM log search and correlation (Splunk SPL fundamentals), severity triage, escalation and closure criteria, ticket-based case documentation, Windows Event Log analysis, MITRE ATT&CK mapping, incident documentation procedures
