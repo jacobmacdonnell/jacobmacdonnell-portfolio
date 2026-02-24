@@ -6,13 +6,9 @@ order: 4
 
 ## Professional Summary
 
-Highly motivated aspiring cybersecurity professional with a strong foundation in **Business Management** and **Psychology**, integrating technical expertise with strategic insights to solve complex security challenges.
-
-Currently completing the SANS Institute's Applied Cybersecurity Certificate (ACS) and earning prestigious GIAC certifications (**GFACT**, **GSEC**, **GCIH**, **GPEN**). Also certified with the **Google Cybersecurity Professional Certificate**.
-
-Proven competitor in the **National Cyber League (NCL)**, ranking **521st out of 8569** participants (**Top 6%**) individually and securing **63rd out of 4798** in the team event (**Top 2%**), with hands-on experience in areas such as network traffic analysis, forensics, and web exploitation.
-
-Skilled in technical security, organizational risk analysis, and communication, with a proven track record of leadership and problem-solving through entrepreneurial ventures. Eager to protect digital assets and enhance security postures by applying business-driven solutions and innovative cybersecurity strategies.
+Entry-level SOC Analyst with hands-on experience in SIEM log correlation, alert triage, and network traffic analysis.
+Investigated ransomware and C2 activity in lab and simulation workflows using Splunk, Zeek, Wireshark, and Volatility.
+Comfortable working a ticket-driven alert lifecycle: acknowledge, investigate, document findings, escalate with context and severity, and close with resolution criteria.
 
 ## Education and Certifications
 **Verified Certifications:** https://www.credly.com/users/jacobmacdonnell
@@ -20,38 +16,40 @@ Skilled in technical security, organizational risk analysis, and communication, 
 ### B.Mgt (Honours), Minor in Psychology
 The University of British Columbia
 
-### Applied Cybersecurity Undergraduate Certificate (ACS)
+### Applied Cybersecurity Certificate (ACS) - In Progress
 SANS Technology Institute
-  - GFACT
-  - GSEC
-  - GCIH
-  - GPEN *(Expected: May 2026)*
+
+### GIAC Certifications
+- GCIH (92%)
+- GSEC
+- GFACT
 
 ### Google Cybersecurity Professional Certificate
-By Google on Coursera (Obtained: Feb 2024)
+Google / Coursera
 
 ## Technical Skills
-- **Languages**: Python (Basic), SQL (Basic)
-- **Security Tools**: Wireshark, Nmap, Gobuster, SIEM (Familiarity), Firewalls, IDS/IPS, Vulnerability Scanning (Familiarity)
-- **Cloud & DevOps**: Docker, AWS, Google Cloud Platform (GCP), Supabase, Familiarity with cloud authentication setups
-- **Developer Tools & OS**: Linux (CLI), Windows, MacOS, VS Code, Cursor (Generative AI), Git
-- **Other**: PC Hardware Assembly, Technical Troubleshooting
+- **Security Operations:** Alert triage, event investigation, SIEM log search and correlation (Splunk SPL fundamentals), severity triage, escalation and closure criteria, ticket-based case documentation, Windows Event Log analysis, MITRE ATT&CK mapping, incident documentation procedures
+- **Network and Forensics:** Network traffic analysis (PCAP, Zeek, RITA), memory analysis (Volatility 3), forensic timeline reconstruction (Hayabusa, Sigma)
+- **Tools and Platforms:** Splunk, Zeek, RITA, Wireshark, Volatility 3, Hayabusa (Sigma), AWS CLI
+- **Systems and Scripting Familiarity:** Windows Server (Active Directory), Linux (REMnux, Kali), AWS, GCP, Python (basic scripting, code review), PowerShell (basic scripting), SQL (basic queries)
+- **AI and Documentation Tools:** Claude, Gemini, Codex
 
 ## Projects
 
-Check out my [cybersecurity projects](/categories) to see examples of my technical skills in action, including:
+Check out my [Security Operations posts](/categories/security-operations/) and [all categories](/categories/) for full writeups.
+
+### Enterprise Incident Response and Threat Hunting Simulation
+- Investigated simulated ransomware activity through live triage and memory analysis with Volatility 3.
+- Reconstructed execution chain (`ONENOTE.EXE -> cmd.exe -> powershell.exe`) to identify wiper behavior and scope compromise.
+- Detected low-and-slow C2 beaconing using RITA and Zeek timing analysis.
+- Expanded incident scope from one infected host to four through beacon correlation.
+- Produced structured incident reports with timeline, impacted assets, indicators of compromise, and recommended containment actions.
 
 ### National Cyber League (Spring 2025)
-**Ranked Top 2% (63rd/4,798 Teams)**
-- Specialized in **Network Traffic Analysis and Forensics**, identifying malicious C2 traffic and reconstructing attack timelines from PCAPs.
-- Executed challenges in **OSINT**, **Web Exploitation**, and **Cryptography**.
+- Ranked 521st out of 8,569 individually (Top 6%).
+- Ranked 63rd out of 4,798 teams (Top 1.3%).
+- Focused on network analysis and forensic challenge workflows under time constraints.
 
-### Enterprise Incident Response | SANS SEC504 (Falsimentis Simulation)
-- **Investigation**: Executed the full IR lifecycle to neutralize a multi-stage wiper/ransomware breach. Analyzed memory dumps with **Volatility 3** to identify malicious process trees and injected code.
-- **Network Forensics**: Reconstructed attack timelines by analyzing PCAPs and proxy logs to identify Command & Control (C2) channels and scope the extent of the breach.
-- **Threat Hunting**: Detected low-jitter C2 beacons using **RITA & Zeek**. Performed high-speed log analysis with **Hayabusa** to track lateral movement and persistence mechanisms.
-
-### Cloud & Web Exploitation | SANS SEC504 Lab Series
-- **Cloud Security**: Identified exposed assets via **Masscan/TLS-Scan**. Exploited SSRF vulnerabilities to compromise AWS IAM credentials and audited configurations using **ScoutSuite**.
-- **Offensive Operations**: Simulated adversary tradecraft including **AppLocker bypass** (Living off the Land), Command Injection, and browser hooking with **BeEF** to validate system hardening.
-- **Credential Assessment**: Audited network authentication by capturing NTLM hashes with **Responder** (LLMNR poisoning) and validating password complexity policies using **Hashcat** and password spraying.
+### Independent Lab Development and CTF Scenarios
+- Conducted Linux forensic investigations to identify malicious artifacts.
+- Analyzed privilege escalation paths and mapped attacker behavior to MITRE ATT&CK techniques.

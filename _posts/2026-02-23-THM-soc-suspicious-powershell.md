@@ -3,6 +3,7 @@ layout: post
 title: "SOC Investigation: Suspicious PowerShell Execution"
 date: 2026-02-23
 categories: [Security Operations, Alert Triage]
+pin: true
 tags: [SOC, Windows, EventID 4688, PowerShell, Investigation]
 ---
 

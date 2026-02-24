@@ -44,18 +44,26 @@ tags: [Source, Tool1, Tool2, Concept]
 ```
 
 **Title Format:**
-*   Always use `Source: Topic` format.
-*   *Example:* `title: "GCIH: Web Application Pentesting"`
+*   Use an operator-focused title that reflects the artifact type.
+*   Investigation example: `title: "SOC Investigation: Suspicious PowerShell Execution"`
+*   Playbook example: `title: "SOC Playbook: Suspicious PowerShell Triage"`
+*   Source-style lab example: `title: "SEC-504: Digital Forensics & Incident Response"`
 
 **Categories:**
 Choose **one** primary functional domain:
 *   `[Red Team, Exploitation]`
 *   `[Red Team, Reconnaissance]`
+*   `[Red Team, Password Cracking]`
+*   `[Red Team, Cloud Security]`
+*   `[Red Team, Web Security]`
 *   `[Blue Team, DFIR]`
 *   `[Blue Team, Threat Hunting]`
+*   `[Blue Team, Security Automation]`
+*   `[Blue Team, System Hardening]`
 *   `[Security Operations, Alert Triage]`
 *   `[Security Operations, Incident Investigation]`
 *   `[CTF Competitions, Forensics]`
+*   `[CTF Competitions, Events]`
 *   `[CTF Competitions, Walkthroughs]`
 
 **Tags:**
