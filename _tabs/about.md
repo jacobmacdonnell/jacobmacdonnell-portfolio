@@ -15,10 +15,10 @@ Comfortable working a ticket-driven alert lifecycle: acknowledge, investigate, d
 - GIAC Security Essentials (GSEC) — 98%
 - GIAC Foundational Cybersecurity Technologies (GFACT)
 
-### Applied Cybersecurity Certificate (ACS) — In Progress
+### Applied Cybersecurity Certificate (ACS) — *In Progress*
 SANS Technology Institute
 
-### SOC Level 1 Path (2026) - In Progress
+### SOC Level 1 Path (2026) — *In Progress*
 TryHackMe
 
 ### Google Cybersecurity Professional Certificate
