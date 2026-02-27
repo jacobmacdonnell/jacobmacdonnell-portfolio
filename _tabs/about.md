@@ -10,12 +10,12 @@ Entry-level SOC Analyst with hands-on experience in SIEM log correlation, alert 
 Investigated ransomware and C2 activity in lab and simulation workflows using Splunk, Zeek, Wireshark, and Volatility.
 Comfortable working a ticket-driven alert lifecycle: acknowledge, investigate, document findings, escalate with context and severity, and close with resolution criteria.
 
-### GIAC Certifications
-- GCIH (92%)
-- GSEC (98%)
-- GFACT
+### Certifications
+- GIAC Certified Incident Handler (GCIH) — 92%
+- GIAC Security Essentials (GSEC) — 98%
+- GIAC Foundational Cybersecurity Technologies (GFACT)
 
-### Applied Cybersecurity Certificate (ACS) - In Progress
+### Applied Cybersecurity Certificate (ACS) — In Progress
 SANS Technology Institute
 
 ### SOC Level 1 Path (2026) - In Progress
