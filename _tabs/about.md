@@ -6,9 +6,7 @@ order: 4
 
 ## Professional Summary
 
-Entry-level SOC Analyst with hands-on experience in SIEM log correlation, alert triage, and network traffic analysis.
-Investigated ransomware and C2 activity in lab and simulation workflows using Splunk, Zeek, Wireshark, and Volatility.
-Comfortable working a ticket-driven alert lifecycle: acknowledge, investigate, document findings, escalate with context and severity, and close with resolution criteria.
+Entry-level SOC Analyst with hands-on lab and simulation experience in security monitoring, alert triage, log investigation, and incident documentation. Comfortable operating a ticket-driven alert lifecycle (acknowledge, investigate, document evidence, escalate with severity/context, close with resolution criteria), using playbooks/runbooks (SOPs) and workbooks/lookups, tracking SOC metrics (MTTD/MTTA/MTTR), and investigating ransomware/C2 using Splunk, Zeek/RITA, Windows Event Logs, Wireshark, and Volatility; mapped findings to MITRE ATT&CK and produced containment recommendations.
 
 ### Certifications
 - GIAC Certified Incident Handler (GCIH) — 92%
@@ -39,17 +37,15 @@ University of British Columbia (UBC)
 Check out my [Security Operations posts](/categories/security-operations/) and [all categories](/categories/) for full writeups.
 
 ### Enterprise Incident Response and Threat Hunting Simulation
-- Investigated simulated ransomware activity through live triage and memory analysis with Volatility 3.
-- Reconstructed execution chain (`ONENOTE.EXE -> cmd.exe -> powershell.exe`) to identify wiper behaviour and scope compromise.
-- Detected low-and-slow C2 beaconing using RITA and Zeek timing analysis.
-- Expanded incident scope from one infected host to four through beacon correlation.
-- Produced structured incident reports with timeline, impacted assets, indicators of compromise, and recommended containment actions.
+- Investigated simulated ransomware activity by performing live triage and analyzing memory dumps with Volatility 3; reconstructed execution chain (OneNote.exe -> cmd.exe -> powershell.exe) to identify destructive wiper behaviour and determine scope of compromise.
+- Detected low-and-slow command-and-control beaconing using RITA and Zeek network timing analysis; expanded incident scope from one infected host to four through 60-second heartbeat correlation.
+- Engineered forensic timelines from Windows Event Logs (.evtx) using Hayabusa and Sigma rules, correlating Service Installations (ID 7045) with Network Logons (ID 4624) to track lateral movement.
+- Documented investigation steps, timeline, and escalation rationale in a ticket-style incident report (severity, scope, IOCs, and recommended containment).
 
-### National Cyber League (Spring 2025)
-- Ranked 521st out of 8,569 individually (Top 6%).
-- Ranked 63rd out of 4,798 teams (Top 1.3%).
-- Focused on network analysis and forensic challenge workflows under time constraints.
+### National Cyber League (Spring 2025) | Network Analysis & Team Coordination
+- Ranked 521st/8,569 individually (Top 6%) and 63rd/4,798 as a team (Top 1.3% nationally) during timed investigations across reconnaissance, OSINT, and forensic analysis challenges.
+- Applied Wireshark filtering to validate alerts, extract IOCs from HTTP headers and User-Agent strings, and identify web-based attack patterns.
 
-### Independent Lab Development and CTF Scenarios
-- Conducted Linux forensic investigations to identify malicious artifacts.
-- Analyzed privilege escalation paths and mapped attacker behaviour to MITRE ATT&CK techniques.
+### Independent Lab Development & CTF Scenarios | TryHackMe & PicoCTF
+- Conducted Linux forensic investigations (recursive grep, archive extraction) to identify malicious artifacts.
+- Analyzed privilege escalation paths and mapped attacker activity to MITRE ATT&CK.
