@@ -19,10 +19,10 @@ SANS Technology Institute
 ### SOC Level 1 Path (2026) — *In Progress*
 TryHackMe
 
-### Google Cybersecurity Professional Certificate
+### Google Cybersecurity Professional Certificate — 2024
 Google / Coursera
 
-### Bachelor of Management (Honours), Minor in Psychology
+### Bachelor of Management (Honours), Minor in Psychology — 2023
 University of British Columbia (UBC)
 
 ## Technical Skills
