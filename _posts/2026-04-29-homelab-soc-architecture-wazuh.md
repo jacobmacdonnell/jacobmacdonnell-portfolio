@@ -4,6 +4,7 @@ title: "Project: Building a Home SOC Lab with Wazuh"
 date: 2026-04-29
 categories: [Security Operations, Lab Builds]
 tags: [SOC, Wazuh, SIEM, XDR, Sysmon, Home Lab, Virtualization]
+pin: true
 ---
 
 ## Objective
