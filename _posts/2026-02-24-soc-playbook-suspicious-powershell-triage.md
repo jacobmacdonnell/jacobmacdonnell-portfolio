@@ -4,6 +4,7 @@ title: "SOC Playbook: Suspicious PowerShell Triage"
 date: 2026-02-24
 categories: [Security Operations, Alert Triage]
 tags: [SOC, Playbook, PowerShell, Windows, EventID 4688]
+pin: true
 ---
 
 ## Purpose

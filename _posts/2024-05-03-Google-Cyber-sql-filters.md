@@ -2,7 +2,6 @@
 title: "Google Cybersecurity: SQL Query Filters"
 date: 2024-05-03
 categories: [Security Operations, Alert Triage]
-pin: true
 tags: [SQL, Linux, Data Analysis, Google Cybersecurity]
 ---
 
