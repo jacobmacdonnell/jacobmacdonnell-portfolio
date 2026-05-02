@@ -3,7 +3,7 @@ layout: post
 title: "SOC Investigation: Suspicious PowerShell Execution"
 date: 2026-02-23
 categories: [Security Operations, Alert Triage]
-tags: [SOC, Windows, EventID 4688, PowerShell, Investigation]
+tags: [TryHackMe, SOC, Windows, Event ID 4688, PowerShell]
 ---
 
 ## Alert Summary

@@ -1,8 +1,9 @@
 ---
+layout: post
 title: "TryHackMe: Bounty Hacker"
 date: 2025-12-28
-categories: [CTF Competitions, Walkthroughs]
-tags: [TryHackMe, CTF Challenges, Linux, Privilege Escalation, FTP, SSH]
+categories: [CTF Labs, Walkthrough]
+tags: [TryHackMe, Linux, Privilege Escalation, FTP, SSH]
 ---
 
 ## Challenge Overview

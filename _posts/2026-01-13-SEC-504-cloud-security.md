@@ -2,8 +2,8 @@
 layout: post
 title: "SEC-504: Cloud Security & AWS Exploitation"
 date: 2026-01-13
-categories: [Red Team, Cloud Security]
-tags: [AWS, S3, SSRF, IMDS, ScoutSuite, Pentesting, Masscan, GCIH]
+categories: [Offensive Security, Cloud Security]
+tags: [SEC-504, GCIH, AWS, S3, SSRF, IMDS, ScoutSuite, Penetration Testing, Masscan]
 pin: true
 ---
 
