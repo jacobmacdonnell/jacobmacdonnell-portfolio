@@ -1,8 +1,9 @@
 ---
-title: "PicoCTF: Big Zip Challenge"
+layout: post
+title: "picoCTF: Big Zip Challenge"
 date: 2025-03-05
-categories: [CTF Competitions, Forensics]
-tags: [CTF Challenges, Linux, picoCTF]
+categories: [CTF Labs, Forensics]
+tags: [Linux, picoCTF]
 ---
 
 ## Challenge Overview

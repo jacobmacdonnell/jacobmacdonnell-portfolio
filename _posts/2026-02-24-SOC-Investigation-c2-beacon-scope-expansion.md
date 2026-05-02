@@ -2,9 +2,9 @@
 layout: post
 title: "SOC Investigation: C2 Beacon Scope Expansion (Lab Simulation)"
 date: 2026-02-24
-categories: [Security Operations, Incident Investigation]
+categories: [Security Operations, Incident Response]
+tags: [SOC Lab, Zeek, RITA, C2, Threat Hunting]
 pin: true
-tags: [SOC, Incident Investigation, Zeek, RITA, C2, Threat Hunting]
 ---
 
 ## Alert Summary

@@ -1,7 +1,8 @@
 ---
+layout: post
 title: "Google Cybersecurity: Linux File Permissions"
 date: 2024-04-01
-categories: [Blue Team, System Hardening]
+categories: [Security Engineering, System Hardening]
 tags: [Linux, File Permissions, Google Cybersecurity]
 ---
 

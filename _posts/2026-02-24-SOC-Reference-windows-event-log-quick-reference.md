@@ -2,8 +2,8 @@
 layout: post
 title: "SOC Reference: Windows Log Quick Reference"
 date: 2026-02-24
-categories: [Security Operations, Incident Investigation]
-tags: [SOC, Windows, Event Logs, EventID 4688, EventID 4624, EventID 7045, Reference]
+categories: [Security Operations, Incident Response]
+tags: [SOC, Windows, Event Logs, Event ID 4688, Event ID 4624, Event ID 7045, Reference]
 ---
 
 ## Scope

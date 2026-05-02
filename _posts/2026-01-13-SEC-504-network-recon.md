@@ -2,8 +2,8 @@
 layout: post
 title: "SEC-504: Network Reconnaissance & Discovery"
 date: 2026-01-13
-categories: [Red Team, Reconnaissance]
-tags: [Nmap, SMB, Netcat, Enumeration, Networking, GCIH]
+categories: [Offensive Security, Reconnaissance]
+tags: [SEC-504, GCIH, Nmap, SMB, Netcat, Enumeration, Network Discovery]
 ---
 
 In the SANS SEC504 course, I performed comprehensive network reconnaissance against a simulated corporate network ("Falsimentis"). The goal was to map the attack surface, identify running services, and discover low-hanging fruit like open file shares.

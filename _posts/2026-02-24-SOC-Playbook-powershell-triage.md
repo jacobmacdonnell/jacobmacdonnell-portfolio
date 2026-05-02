@@ -3,7 +3,7 @@ layout: post
 title: "SOC Playbook: Suspicious PowerShell Triage"
 date: 2026-02-24
 categories: [Security Operations, Alert Triage]
-tags: [SOC, Playbook, PowerShell, Windows, EventID 4688]
+tags: [SOC, Playbook, PowerShell, Windows, Event ID 4688]
 pin: true
 ---
 

@@ -2,8 +2,8 @@
 layout: post
 title: "Project: Building a Home SOC Lab with Wazuh"
 date: 2026-04-29
-categories: [Security Operations, Lab Builds]
-tags: [SOC, Wazuh, SIEM, XDR, Sysmon, Home Lab, Virtualization]
+categories: [Security Operations, SOC Lab]
+tags: [SOC, Wazuh, SIEM, XDR, Sysmon, Virtualization]
 pin: true
 ---
 
@@ -85,4 +85,4 @@ To validate detection capabilities, I prepared the endpoint for automated advers
 
 ## Summary
 
-This lab build provides a robust foundation for detection engineering and security analysis. By combining Wazuh's SIEM/XDR capabilities with high-fidelity telemetry from Sysmon and automated adversarial simulation via Atomic Red Team, I have created a realistic environment for analyzing modern cyber threats.
+This SOC lab provides a robust foundation for detection engineering and security analysis. By combining Wazuh's SIEM/XDR capabilities with high-fidelity telemetry from Sysmon and automated adversarial simulation via Atomic Red Team, I have created a realistic environment for analyzing modern cyber threats.

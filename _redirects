@@ -10,3 +10,14 @@ http://jacobmacdonnell.com/* https://jacobmacdonnell.com/:splat 301!
 http://jacobmacdonnell.ca/* https://jacobmacdonnell.com/:splat 301!
 http://www.jacobmacdonnell.com/* https://jacobmacdonnell.com/:splat 301!
 http://www.jacobmacdonnell.ca/* https://jacobmacdonnell.com/:splat 301!
+
+# Preserve old post slugs after filename/source-name cleanup
+/posts/google-cyber-linux-file-permissions/ /posts/google-cybersecurity-linux-file-permissions/ 301
+/posts/google-cyber-sql-filters/ /posts/google-cybersecurity-sql-filters/ 301
+/posts/google-cyber-python-algorithm/ /posts/google-cybersecurity-python-automation/ 301
+/posts/picoctf-big-zip/ /posts/picoctf-big-zip-challenge/ 301
+/posts/thm-soc-suspicious-powershell/ /posts/tryhackme-soc-suspicious-powershell/ 301
+/posts/soc-incident-c2-beacon-scope-expansion/ /posts/soc-investigation-c2-beacon-scope-expansion/ 301
+/posts/soc-playbook-suspicious-powershell-triage/ /posts/soc-playbook-powershell-triage/ 301
+/posts/soc-reference-windows-log-quick-reference/ /posts/soc-reference-windows-event-log-quick-reference/ 301
+/posts/homelab-soc-architecture-wazuh/ /posts/project-soc-lab-wazuh/ 301

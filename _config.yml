@@ -72,8 +72,6 @@ pwa:
 
 paginate: 10
 
-baseurl: ""
-
 # Markdown Settings
 kramdown:
   footnote_backlink: "&#8617;&#xfe0e;"
