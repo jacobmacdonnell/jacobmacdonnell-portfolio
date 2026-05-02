@@ -6,7 +6,7 @@ timezone: America/Vancouver
 title: Jacob Macdonnell
 tagline: Security Operations Portfolio
 description: >-
-  Security Operations portfolio featuring alert triage investigations, incident documentation workflows, and defensive analysis by Jacob Macdonnell.
+  Security Operations portfolio featuring SOC investigations, alert triage workflows, incident response documentation, and defensive analysis by Jacob Macdonnell.
 
 url: "https://jacobmacdonnell.com"
 baseurl: ""
@@ -47,7 +47,7 @@ analytics:
 pageviews:
   provider:
 
-theme_mode: 
+theme_mode: dark
 
 cdn:
 
@@ -121,6 +121,8 @@ compress_html:
     envs: [development]
 
 exclude:
+  - AGENTS.md
+  - DESIGN.md
   - "*.gem"
   - "*.gemspec"
   - docs

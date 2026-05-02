@@ -46,6 +46,6 @@ Check out my [Security Operations posts](/categories/security-operations/) and [
 - Ranked 521st/8,569 individually (Top 6%) and 63rd/4,798 as a team (Top 1.3% nationally) during timed investigations across reconnaissance, OSINT, and forensic analysis challenges.
 - Applied Wireshark filtering to validate alerts, extract IOCs from HTTP headers and User-Agent strings, and identify web-based attack patterns.
 
-### Independent Lab Development & CTF Scenarios | TryHackMe & PicoCTF
+### Independent Lab Development & CTF Scenarios | TryHackMe & picoCTF
 - Conducted Linux forensic investigations (recursive grep, archive extraction) to identify malicious artifacts.
 - Analyzed privilege escalation paths and mapped attacker activity to MITRE ATT&CK.
