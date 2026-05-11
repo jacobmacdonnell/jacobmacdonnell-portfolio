@@ -6,119 +6,81 @@ categories: [Security Operations, Incident Response]
 tags: [TryHackMe, TA505, MirrorBlast, Wireshark, C2, Incident Report]
 ---
 
+## Scenario
+
+**Platform:** TryHackMe (Room: [Warzone 1](https://tryhackme.com/room/warzone1))  
+**Role:** Tier 1 SOC Analyst  
+**Objective:** Triage a high-priority IDS alert by analyzing a provided packet capture (`Zone1.pcap`) to confirm Command and Control (C2) activity and identify malicious artifacts.
+
+---
+
 ## Executive Summary
 
-Analysis of the provided packet capture (`Zone1.pcap`) confirmed the compromise of an internal endpoint by the financially motivated threat group **TA505**. The adversary utilized malicious Windows Installer packages (`.msi`) to deploy the **MirrorBlast** malware family.
+Analysis of the provided packet capture (`Zone1.pcap`) confirmed the compromise of an internal endpoint by the financially motivated threat group **[TA505](https://attack.mitre.org/groups/G0092/)**. The investigation revealed a sophisticated defense evasion strategy utilizing malicious Windows Installer packages (`.msi`) to deploy the **MirrorBlast** malware family.
 
-The attack chain demonstrated distinct defense evasion tradecraft: bundling a legitimate, lightweight interpreter (REBOL) inside standard installers to execute script payloads from directory paths designed to mimic legitimate Google software.
+The core of the attack chain involved **Proxy Execution**: the adversary bundled a legitimate, signed interpreter (REBOL) inside standard installers to execute malicious script payloads. This technique allowed the threat actor to hide in plain sight, mimicking legitimate Google software directories and staying under the radar of signature-based detection.
 
 ---
 
 ## 1. Initial Alert Triage
 
-The investigation began by parsing network intrusion detection system (IDS) logs using Brim (Suricata integration), identifying a high-severity signature match.
+The investigation began with a high-severity alert from the network intrusion detection system (IDS).
 
-* **Alert Signature:** `ET MALWARE MirrorBlast CnC Activity M3`
-* **Compromised Internal Host:** `172.16.1.102`
-* **External C2 Node:** `169.239.128.11`
-* **Transport Protocol:** TCP (Port 80 / HTTP)
-
----
-
-## 2. Threat Intelligence & Attribution
-
-Pivoting the destination IP (`169.239.128.11`) into VirusTotal provided immediate behavioral context and historical infrastructure mapping.
-
-* **Associated Domain:** `fidufagios[.]com`
-* **Threat Group Attribution:** TA505
-* **Associated Malware Family:** MirrorBlast
-* **Primary Delivery Mechanism:** Malicious `.msi` (Windows Installer) attachments typically distributed via phishing campaigns.
+*   **Alert Signature:** `ET MALWARE MirrorBlast CnC Activity M3`
+*   **Compromised Host:** `172.16.1.102`
+*   **C2 Infrastructure:** `169.239.128.11`
+*   **Vector:** TCP Port 80 (HTTP)
 
 ---
 
-## 3. Traffic Analysis & Payload Staging
+## 2. Analytical Findings
 
-Filtering HTTP traffic in Wireshark (`http.request.method == GET`) revealed the staging infrastructure used to pull down the initial payloads. The compromised endpoint communicated with two secondary malicious infrastructure IPs to download distinct installer files.
+### Staging and Evasion
+The adversary utilized a multi-stage download process to pull down the MirrorBlast loader. The compromised endpoint communicated with two staging servers to download distinct installer files:
+1.  `filter.msi` (hosted on `185.10.68.235`)
+2.  `10opd3r_load.msi` (hosted on `192.36.27.92`)
 
-### Identified File Downloads
+### The REBOL Abuse Angle
+The most significant finding was the use of the legitimate **REBOL View 2.7.8.3.1** interpreter. Packet analysis revealed an anomalous HTTP User-Agent string originating from the host, confirming that this non-standard software engine was being used to stage further payloads.
 
-1. **Payload 1:** `filter.msi` hosted on `185.10.68.235`
-2. **Payload 2:** `10opd3r_load.msi` hosted on `192.36.27.92`
+### Host Masquerading
+By extracting the HTTP streams, I identified the target directories for the dropped payloads. The adversary used a masquerading technique to blend in with legitimate system files:
+*   **Path 1:** `C:\ProgramData\001\` (containing `arab.exe`)
+*   **Path 2:** `C:\ProgramData\Local\Google\` (containing the REBOL interpreter and the malicious `exemple.rb` script)
 
-### Anomalous Network Artifacts
-
-During the download phases, packet analysis revealed an unusual HTTP User-Agent string originating from the internal host:
-
-```text
-User-Agent: REBOL View 2.7.8.3.1
-```
-
-This indicated that a non-standard software execution engine was actively making web requests to stage further payloads.
-
----
-
-## 4. Host Artifact Identification & Payload Deep-Dive
-
-To determine the host-level impact without direct disk access, manual stream extraction was performed on the HTTP traffic delivering the `.msi` files. Parsing the unencrypted strings within the installation binaries exposed the target extraction directories and dropped file names.
-
-### Staging Payload 1 (`filter.msi`)
-
-Following the TCP stream for the delivery of `filter.msi` revealed that the package drops executable binaries directly into a newly created numerical directory inside `ProgramData`.
-
-* **Dropped File 1:** `C:\ProgramData\001\arab.bin`
-* **Dropped File 2:** `C:\ProgramData\001\arab.exe`
-
-### Staging Payload 2 (`10opd3r_load.msi`)
-
-Stream analysis of the second installer revealed a sophisticated masquerading technique. The installer constructs a fake directory path mimicking Google software installations to hide the embedded REBOL interpreter and its execution script.
-
-* **Interpreter Path:** `C:\ProgramData\Local\Google\rebol-view-278-3-1.exe`
-* **Script Payload Path:** `C:\ProgramData\Local\Google\exemple.rb`
-
-**Execution Logic:** The installer extracts the REBOL executable to silently call the dropped `.rb` script using command-line switches:
-
-```cmd
-rebol-view-278-3-1.exe -w -i -s C:/ProgramData/Local/Google/exemple.rb
-```
+**Execution Logic:** The installer silent-calls the REBOL engine to run the script:
+`rebol-view-278-3-1.exe -w -i -s C:/ProgramData/Local/Google/exemple.rb`
 
 ---
 
-## 5. Indicators of Compromise (IoCs)
+## 3. Indicators of Compromise (IoCs)
 
-### Network Indicators
+### Network
+*   **C2 Node:** `169.239.128.11` (fidufagios[.]com)
+*   **Staging:** `185.10.68.235`, `192.36.27.92`
+*   **User-Agent:** `REBOL View 2.7.8.3.1`
 
-| Type | Indicator | Context |
-| --- | --- | --- |
-| **IPv4** | `169.239.128.11` | Primary MirrorBlast C2 Node |
-| **IPv4** | `185.10.68.235` | Staging Server (`filter.msi`) |
-| **IPv4** | `192.36.27.92` | Staging Server (`10opd3r_load.msi`) |
-| **Domain** | `fidufagios[.]com` | Resolved C2 Infrastructure |
-| **User-Agent** | `REBOL View 2.7.8.3.1` | Anomalous client request string |
-
-### Host Indicators (File Paths)
-
-```text
-C:\ProgramData\001\arab.bin
-C:\ProgramData\001\arab.exe
-C:\ProgramData\Local\Google\rebol-view-278-3-1.exe
-C:\ProgramData\Local\Google\exemple.rb
-```
+### Host
+*   `C:\ProgramData\001\arab.exe`
+*   `C:\ProgramData\Local\Google\rebol-view-278-3-1.exe`
+*   `C:\ProgramData\Local\Google\exemple.rb`
 
 ---
 
-## 6. Adversary Tradecraft Summary (MITRE ATT&CK)
+## 4. MITRE ATT&CK Mapping
 
-* **T1204.002 (User Execution: Malicious File):** Initial execution relying on a user executing a malicious `.msi` installer.
-* **T1036.005 (Masquerading: Match Legitimate Name or Location):** Creation of the `C:\ProgramData\Local\Google\` directory path to evade basic manual inspection.
-* **T1129 (Shared Modules):** Use of an embedded, signed or legitimate interpreter (`rebol-view`) to proxy execution of the primary payload script (`exemple.rb`).
-* **T1071.001 (Application Layer Protocol: Web Protocols):** Exfiltration and command communication routed over standard unencrypted HTTP.
+*   **[T1204.002 (User Execution: Malicious File)](https://attack.mitre.org/techniques/T1204/002/):** Initial infection via user-executed `.msi`.
+*   **[T1036.005 (Masquerading: Match Legitimate Name or Location)](https://attack.mitre.org/techniques/T1036/005/):** Use of Google-themed directories to evade manual inspection.
+*   **[T1129 (Shared Modules)](https://attack.mitre.org/techniques/T1129/):** Proxy execution via a signed, legitimate interpreter.
+*   **[T1071.001 (Application Layer Protocol: Web Protocols)](https://attack.mitre.org/techniques/T1071/001/):** Unencrypted C2 communication over HTTP.
 
 ---
 
-## 7. Conclusion & Containment Recommendations
+## 5. Impact & Recommendations
 
-The incident represents a successful deployment of TA505's MirrorBlast loader. Immediate remediation steps require:
+This investigation confirmed a successful **True Positive** compromise by TA505.
 
-1. **Network Containment:** Isolate host `172.16.1.102` from the corporate network immediately. Block outbound traffic to all three identified external IP addresses at the perimeter firewall.
-2. **Host Remediation:** Purge all identified artifacts within `C:\ProgramData\001\` and `C:\ProgramData\Local\Google\`.
-3. **Root Cause Analysis:** Pull endpoint logs (EDR/Sysmon) to identify the initial delivery vector (likely a malicious email attachment or link leading to the execution of `filter.msi`).
+**Recommended Actions:**
+1.  **Immediate Containment:** Isolate host `172.16.1.102` and block all identified IoCs at the network perimeter.
+2.  **Remediation:** Purge all identified artifacts in `ProgramData`.
+3.  **Detection Engineering:** Develop hunts for non-standard interpreters (REBOL, AutoIt, etc.) communicating externally or executing from user-writable directories.

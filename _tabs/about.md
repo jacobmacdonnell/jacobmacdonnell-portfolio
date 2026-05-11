@@ -6,7 +6,7 @@ order: 4
 
 ## Professional Summary
 
-SOC-focused security analyst with hands-on experience investigating ransomware and command-and-control activity, reconstructing attack chains, and correlating endpoint and network telemetry to determine scope and impact. Skilled in triaging alerts, distinguishing false positives, and producing clear incident reports aligned to MITRE ATT&CK.
+Entry-level SOC Analyst with hands-on lab and simulation experience in security monitoring, alert triage, log investigation, and incident documentation. Comfortable operating a ticket-driven alert lifecycle (acknowledge, investigate, document evidence, escalate with severity/context, close with resolution criteria), using playbooks/runbooks (SOPs) and workbooks/lookups, tracking SOC metrics (MTTD/MTTA/MTTR), and investigating ransomware/C2 using Splunk, Zeek/RITA, Windows Event Logs, Wireshark, and Volatility; mapped findings to MITRE ATT&CK and produced containment recommendations.
 
 ### Certifications
 - GIAC Certified Incident Handler (GCIH) — 92%
@@ -46,6 +46,6 @@ Check out my [Security Operations posts](/categories/security-operations/) and [
 - Ranked 521st/8,569 individually (Top 6%) and 63rd/4,798 as a team (Top 1.3% nationally) during timed investigations across reconnaissance, OSINT, and forensic analysis challenges.
 - Applied Wireshark filtering to validate alerts, extract IOCs from HTTP headers and User-Agent strings, and identify web-based attack patterns.
 
-### Independent Lab Development & CTF Scenarios | TryHackMe & PicoCTF
+### Independent Lab Development & CTF Scenarios | TryHackMe & picoCTF
 - Conducted Linux forensic investigations (recursive grep, archive extraction) to identify malicious artifacts.
 - Analyzed privilege escalation paths and mapped attacker activity to MITRE ATT&CK.

@@ -1,0 +1,159 @@
+---
+layout: default
+---
+
+<link rel="stylesheet" href="{{ '/assets/css/portfolio.css' | relative_url }}">
+
+{% assign featured_posts = site.posts | where_exp: "post", "post.pin == true" %}
+{% assign total_posts = site.posts | size %}
+{% assign incident_posts = site.posts | where_exp: "post", "post.categories contains 'Incident Response'" %}
+{% assign triage_posts = site.posts | where_exp: "post", "post.categories contains 'Alert Triage'" %}
+{% assign soc_lab_posts = site.posts | where_exp: "post", "post.categories contains 'SOC Lab'" %}
+
+<main class="portfolio-home" aria-label="Security Operations Portfolio">
+  <section class="portfolio-hero" aria-labelledby="portfolio-hero-title">
+    <div class="portfolio-hero__content">
+      <p class="portfolio-eyebrow">Security Operations Portfolio</p>
+      <h1 id="portfolio-hero-title">SOC investigations, incident workflows, and lab-built detection practice.</h1>
+      <p class="portfolio-hero__summary">
+        I document alert triage, Windows event analysis, network forensics, threat hunting, and hands-on security labs with an emphasis on evidence, scope, and escalation-ready reporting.
+      </p>
+      <div class="portfolio-hero__actions" aria-label="Primary actions">
+        <a class="portfolio-button portfolio-button--primary" href="{{ '/categories/security-operations/' | relative_url }}">
+          View SOC Work
+        </a>
+        <a class="portfolio-button" href="{{ '/about/' | relative_url }}">
+          Analyst Profile
+        </a>
+      </div>
+    </div>
+
+    <aside class="signal-panel" aria-label="Current focus">
+      <div class="signal-panel__header">
+        <span>Current Focus</span>
+        <strong>Ready for SOC Level 1</strong>
+      </div>
+      <dl class="signal-grid">
+        <div>
+          <dt>Case Files</dt>
+          <dd>{{ total_posts }}</dd>
+        </div>
+        <div>
+          <dt>IR / DFIR</dt>
+          <dd>{{ incident_posts | size }}</dd>
+        </div>
+        <div>
+          <dt>Triage</dt>
+          <dd>{{ triage_posts | size }}</dd>
+        </div>
+        <div>
+          <dt>SOC Lab</dt>
+          <dd>{{ soc_lab_posts | size }}</dd>
+        </div>
+      </dl>
+      <div class="signal-strip" aria-label="Core capabilities">
+        <span>Windows Event Logs</span>
+        <span>Zeek / RITA</span>
+        <span>Wazuh</span>
+        <span>PowerShell</span>
+      </div>
+    </aside>
+  </section>
+
+  <section class="portfolio-section" aria-labelledby="featured-case-files">
+    <div class="section-heading">
+      <p class="portfolio-eyebrow">Pinned Work</p>
+      <h2 id="featured-case-files">Featured Case Files</h2>
+    </div>
+
+    <div class="case-grid case-grid--featured">
+      {% for post in featured_posts limit: 4 %}
+        <article class="case-card case-card--featured">
+          <div class="case-card__meta">
+            <span>{{ post.categories | join: " / " }}</span>
+            <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %-d, %Y" }}</time>
+          </div>
+          <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+          <p>{{ post.excerpt | strip_html | normalize_whitespace | truncate: 150 }}</p>
+          <div class="telemetry-chips" aria-label="Tags for {{ post.title }}">
+            {% for tag in post.tags limit: 5 %}
+              <span>{{ tag }}</span>
+            {% endfor %}
+          </div>
+        </article>
+      {% endfor %}
+    </div>
+  </section>
+
+  <section class="portfolio-section portfolio-split" aria-labelledby="focus-areas">
+    <div>
+      <div class="section-heading">
+        <p class="portfolio-eyebrow">Operating Model</p>
+        <h2 id="focus-areas">Focus Areas</h2>
+      </div>
+      <div class="focus-list">
+        <article>
+          <h3>Alert Triage</h3>
+          <p>PowerShell process creation, Windows event review, severity decisions, escalation criteria, and documentation discipline.</p>
+        </article>
+        <article>
+          <h3>Incident Response</h3>
+          <p>Scope expansion, C2 beacon analysis, memory/network forensics, timeline reconstruction, and containment recommendations.</p>
+        </article>
+        <article>
+          <h3>Security Engineering</h3>
+          <p>Automation, hardening, lab architecture, telemetry enrichment, and repeatable analyst workflows.</p>
+        </article>
+      </div>
+    </div>
+
+    <aside class="tool-stack" aria-label="Tooling stack">
+      <div class="section-heading">
+        <p class="portfolio-eyebrow">Tooling</p>
+        <h2>Telemetry Stack</h2>
+      </div>
+      <div class="tool-cloud">
+        <span>Wazuh</span>
+        <span>Windows Event Logs</span>
+        <span>Sysmon</span>
+        <span>PowerShell</span>
+        <span>Zeek</span>
+        <span>RITA</span>
+        <span>Wireshark</span>
+        <span>Volatility</span>
+        <span>Hayabusa</span>
+        <span>Nmap</span>
+        <span>AWS</span>
+        <span>Linux</span>
+      </div>
+    </aside>
+  </section>
+
+  <section class="portfolio-section" aria-labelledby="latest-writeups">
+    <div class="section-heading section-heading--row">
+      <div>
+        <p class="portfolio-eyebrow">Recent Evidence</p>
+        <h2 id="latest-writeups">Latest Writeups</h2>
+      </div>
+      <a class="portfolio-link" href="{{ '/archives/' | relative_url }}">View archive</a>
+    </div>
+
+    <div class="case-grid">
+      {% for post in site.posts limit: 6 %}
+        <article class="case-card">
+          <div class="case-card__meta">
+            <span>{{ post.categories | join: " / " }}</span>
+            <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %-d, %Y" }}</time>
+          </div>
+          <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+          <p>{{ post.excerpt | strip_html | normalize_whitespace | truncate: 125 }}</p>
+          <div class="telemetry-chips" aria-label="Tags for {{ post.title }}">
+            {% for tag in post.tags limit: 4 %}
+              <span>{{ tag }}</span>
+            {% endfor %}
+          </div>
+        </article>
+      {% endfor %}
+    </div>
+  </section>
+</main>
