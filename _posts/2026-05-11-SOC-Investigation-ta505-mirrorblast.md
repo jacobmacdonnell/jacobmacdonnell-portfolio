@@ -16,9 +16,9 @@ tags: [TryHackMe, TA505, MirrorBlast, Wireshark, C2, Incident Report]
 
 ## Executive Summary
 
-Analysis of the provided packet capture (`Zone1.pcap`) confirmed the compromise of an internal endpoint by the financially motivated threat group **[TA505](https://attack.mitre.org/groups/G0092/)**. The investigation revealed a sophisticated defense evasion strategy utilizing malicious Windows Installer packages (`.msi`) to deploy the **MirrorBlast** malware family.
+Analysis of the provided packet capture (`Zone1.pcap`) identified strong indicators of a TA505-associated intrusion targeting an internal endpoint. The investigation revealed a sophisticated defense evasion strategy utilizing malicious Windows Installer packages (`.msi`) to deploy the **MirrorBlast** malware family.
 
-The core of the attack chain involved **Proxy Execution**: the adversary bundled a legitimate, signed interpreter (REBOL) inside standard installers to execute malicious script payloads. This technique allowed the threat actor to hide in plain sight, mimicking legitimate Google software directories and staying under the radar of signature-based detection.
+The core of the attack chain involved **proxy execution**: bundling a signed interpreter (REBOL) within standard installers to run malicious scripts. This technique reduced detection effectiveness by blending execution into authorized process chains, mimicking Google software directories to evade signature-based tools.
 
 ---
 
@@ -48,7 +48,7 @@ By extracting the HTTP streams, I identified the target directories for the drop
 *   **Path 1:** `C:\ProgramData\001\` (containing `arab.exe`)
 *   **Path 2:** `C:\ProgramData\Local\Google\` (containing the REBOL interpreter and the malicious `exemple.rb` script)
 
-**Execution Logic:** The installer silent-calls the REBOL engine to run the script:
+**Execution Logic:** Evidence suggests the installer invokes the REBOL engine to execute the script:
 `rebol-view-278-3-1.exe -w -i -s C:/ProgramData/Local/Google/exemple.rb`
 
 ---
@@ -56,7 +56,7 @@ By extracting the HTTP streams, I identified the target directories for the drop
 ## 3. Indicators of Compromise (IoCs)
 
 ### Network
-*   **C2 Node:** `169.239.128.11` (fidufagios[.]com)
+*   **C2 Server:** `169.239.128.11` (fidufagios[.]com)
 *   **Staging:** `185.10.68.235`, `192.36.27.92`
 *   **User-Agent:** `REBOL View 2.7.8.3.1`
 
@@ -71,16 +71,18 @@ By extracting the HTTP streams, I identified the target directories for the drop
 
 *   **[T1204.002 (User Execution: Malicious File)](https://attack.mitre.org/techniques/T1204/002/):** Initial infection via user-executed `.msi`.
 *   **[T1036.005 (Masquerading: Match Legitimate Name or Location)](https://attack.mitre.org/techniques/T1036/005/):** Use of Google-themed directories to evade manual inspection.
-*   **[T1129 (Shared Modules)](https://attack.mitre.org/techniques/T1129/):** Proxy execution via a signed, legitimate interpreter.
+*   **[T1129 (Shared Modules)](https://attack.mitre.org/techniques/T1129/):** proxy execution via a signed, legitimate interpreter — behavior aligns with system binary proxy execution patterns.
 *   **[T1071.001 (Application Layer Protocol: Web Protocols)](https://attack.mitre.org/techniques/T1071/001/):** Unencrypted C2 communication over HTTP.
 
 ---
 
 ## 5. Impact & Recommendations
 
-This investigation confirmed a successful **True Positive** compromise by TA505.
+This investigation identified a high-confidence intrusion scenario consistent with TA505 activity.
 
 **Recommended Actions:**
 1.  **Immediate Containment:** Isolate host `172.16.1.102` and block all identified IoCs at the network perimeter.
 2.  **Remediation:** Purge all identified artifacts in `ProgramData`.
 3.  **Detection Engineering:** Develop hunts for non-standard interpreters (REBOL, AutoIt, etc.) communicating externally or executing from user-writable directories.
+
+These findings highlight the need for behavior-based detection focused on unusual interpreter execution from user-writable directories and anomalous HTTP beaconing patterns.
