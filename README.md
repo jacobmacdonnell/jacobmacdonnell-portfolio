@@ -20,15 +20,15 @@ To maintain consistency, all new write-ups must follow these strict standards.
 
 ### 1. File Naming Convention
 Files must be placed in `_posts/` and follow this format:
-`YYYY-MM-DD-Source-topic-name.md`
+`YYYY-MM-DD-Source-Or-Activity-topic-name.md`
 
-*   **Source:** Use the official source/platform casing (e.g., `SEC-504`, `Google-Cybersecurity`, `picoCTF`, `TryHackMe`, `NCL`).
-*   **Topic:** Lowercase, kebab-case (e.g., `linux-file-permissions`, `advanced-exploitation`).
+*   **Source/Activity:** Use the official source/platform casing (e.g., `SEC-504`, `TryHackMe`) or the primary activity (e.g., `SOC-Investigation`, `SOC-Lab`, `SOC-Playbook`).
+*   **Topic:** Lowercase, kebab-case (e.g., `linux-file-permissions`, `suspicious-powershell`).
 
 **Examples:**
 *   `2026-01-13-SEC-504-advanced-exploitation.md`
-*   `2024-04-01-Google-Cybersecurity-linux-file-permissions.md`
-*   `2025-03-05-picoCTF-big-zip-challenge.md`
+*   `2026-02-23-SOC-Investigation-suspicious-powershell.md`
+*   `2026-04-29-SOC-Lab-wazuh.md`
 
 ### 2. Front Matter Template
 Every post must start with this YAML header:
@@ -36,7 +36,7 @@ Every post must start with this YAML header:
 ```yaml
 ---
 layout: post
-title: "Source: Topic Name"
+title: "Source or Activity: Topic Name"
 date: YYYY-MM-DD
 categories: [Functional Domain, Activity]
 tags: [Source, Tool1, Tool2, Concept]

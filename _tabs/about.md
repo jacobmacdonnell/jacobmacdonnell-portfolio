@@ -6,7 +6,7 @@ order: 4
 
 ## Professional Summary
 
-Entry-level SOC Analyst with hands-on lab and simulation experience in security monitoring, alert triage, log investigation, and incident documentation. Comfortable operating a ticket-driven alert lifecycle (acknowledge, investigate, document evidence, escalate with severity/context, close with resolution criteria), using playbooks/runbooks (SOPs) and workbooks/lookups, tracking SOC metrics (MTTD/MTTA/MTTR), and investigating ransomware/C2 using Splunk, Zeek/RITA, Windows Event Logs, Wireshark, and Volatility; mapped findings to MITRE ATT&CK and produced containment recommendations.
+SOC-focused security analyst with hands-on experience investigating ransomware and command-and-control activity, reconstructing attack chains, and correlating endpoint and network telemetry to determine scope and impact. Skilled in triaging alerts, distinguishing false positives, and producing clear incident reports aligned to MITRE ATT&CK.
 
 ### Certifications
 - GIAC Certified Incident Handler (GCIH) — 92%
