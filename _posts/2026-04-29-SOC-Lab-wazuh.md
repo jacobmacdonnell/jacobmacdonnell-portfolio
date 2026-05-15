@@ -3,86 +3,80 @@ layout: post
 title: "SOC Lab: Building a Home SOC Lab with Wazuh"
 date: 2026-04-29
 categories: [Security Operations, SOC Lab]
-tags: [SOC, Wazuh, SIEM, XDR, Sysmon, Virtualization]
+tags: [SOC, Wazuh, SIEM, XDR, Sysmon, AD-Security, Virtualization]
 pin: true
 ---
 
 ## Objective
 
-The primary goal of this project was to architect and deploy a fully functional Security Operations Center (SOC) environment that integrates physical network telemetry with virtualized endpoint detection. This environment is designed to simulate real-world adversarial behavior and provide a platform for high-fidelity detection engineering.
+The primary goal of this project was to architect and deploy a fully functional Security Operations Center (SOC) environment that integrates physical network telemetry with virtualized endpoint detection. This environment is designed to simulate real-world adversarial behavior and automate the incident response lifecycle using SIEM and XDR platforms within a strictly isolated environment.
 
 ## Architecture & Tech Stack
 
 - **Hypervisor:** VMware Workstation Pro 17
 - **SOC Node (Defense):** Ubuntu Server 24.04 LTS (Wazuh SIEM/XDR)
-- **Victim Node (Attack):** Windows 11 Enterprise (Sysmon + Atomic Red Team)
+- **Identity Provider:** Windows Server 2022 (DC01: LAB.local Domain)
+- **Victim Node (Attack):** Windows 11 Enterprise (WIN11-VIC01: Domain Joined)
+- **Attacker Node:** Kali Linux (Adversary Simulation)
+- **Security Tooling:** Sysmon (Olaf Hartong Config), Atomic Red Team
 - **Perimeter Gateway:** UniFi Dream Machine Pro (UDM Pro)
-- **Host Hardware:** Windows 11 Workstation
 
-## Phase 1: Virtual Networking & Infrastructure
+## Phase 1: Dual-Homed Networking & Isolation
 
-To mirror enterprise segmentation on a single workstation, I implemented a dual-homed networking strategy to balance log ingestion with malware isolation.
+To mirror enterprise segmentation, I implemented a dual-homed networking strategy. This balances management access with strict air-gapping of the detonation zone.
 
-### Network Segmentation Strategy
-- **Management & Ingestion (Bridged):** The Ubuntu SOC Server resides on the physical home LAN via a bridged adapter. This allows it to receive Syslog data directly from the physical gateway (UDM Pro) and provides a direct management interface.
-- **Detonation & Isolation (NAT):** The Windows 11 Victim machine is isolated within a NAT segment. This creates a logical buffer between the detonation environment and the host OS/Home LAN, while still allowing outbound HTTPS traffic for C2 simulation and tool updates.
-
-### Troubleshooting: IP Persistence
-During setup, VMware's default "Automatic" bridging caused IP assignment failures. I remediated this by hard-coding the VMnet0 virtual switch to the physical host network adapter and implementing a strict YAML Netplan configuration within Ubuntu to enforce a static IP (**192.168.24.174**) and disable DHCP drift.
+### Network Segmentation
+- **Management & Ingestion (VMnet0/Bridged):** The SOC Server (ens33) resides on the physical home LAN (**192.168.24.174**). This allows for Syslog ingestion from the UDM Pro and browser access from the host.
+- **Internal Lab Wire (VMnet2/Host-Only):** All lab nodes communicate over an isolated **10.0.0.0/24** subnet. There is no gateway to the internet from this segment. The SOC Server (ens37) acts as the bridge at **10.0.0.2**.
 
 ## Phase 2: Node Provisioning & Hardening
 
 ### SOC Server (Ubuntu 24.04)
-- **Hardening:** Disabled the OpenSSH service to follow the Principle of Least Privilege. Management is restricted strictly to the hypervisor physical console and the HTTPS web dashboard.
-- **Resource Allocation:** 8GB RAM and 4 vCPUs to ensure stable Indexer and Dashboard performance.
+- **Hardening:** Disabled SSH service; management is restricted to the hypervisor console and HTTPS dashboard.
+- **Resource Allocation:** 8GB RAM and 4 vCPUs. Static IP enforced via Netplan to prevent DHCP drift.
 
-### Victim Endpoint (Windows 11)
-- **Virtual TPM:** Integrated vTPM (Virtual Trusted Platform Module) to meet Windows 11 hardware requirements via localized VM encryption.
-- **Provisioning:** Utilized `OOBE\BYPASSNRO` to bypass Microsoft Account requirements, ensuring consistent forensic testing with a local account.
-- **Privacy Hardening:** Disabled all diagnostic and telemetry toggles during setup to reduce non-essential background log noise, ensuring high-fidelity alerting in the SIEM.
+### Domain Controller (DC01)
+- **Role:** Configured as the Primary Domain Controller and DNS server for **LAB.local** (10.0.0.10).
+- **Hardening:** External DNS resolution disabled to maintain environment isolation.
+
+### Victim Endpoint (WIN11-VIC01)
+- **Deployment:** Integrated vTPM for localized VM encryption. Successfully joined to the LAB.local domain.
+- **Security Override:** Utilized `DefenderControl` to permanently disable Windows Defender, ensuring simulations reflect a "post-compromise" scenario.
 
 ## Phase 3: SIEM Orchestration (Wazuh Deployment)
 
 ### Troubleshooting LVM Disk Exhaustion
-The initial automated deployment failed due to the Ubuntu installer default-provisioning only 19GB of the allocated 40GB virtual disk to the Logical Volume (LVM). 
-
-**Remediation:**
-I performed an online volume expansion to reclaim the unallocated physical space:
+The initial deployment failed due to the Ubuntu installer provisioning only 19GB of the 40GB virtual disk. I performed an online volume expansion to reclaim the space:
 ```bash
-# Grow the Logical Volume
 lvextend -l +100%FREE /dev/ubuntu-vg/ubuntu-lv
-
-# Expand the ext4 filesystem
 resize2fs /dev/ubuntu-vg/ubuntu-lv
 ```
-This allowed the Wazuh Indexer and Dashboard to install successfully.
 
-## Phase 4: Endpoint Integration (The "Agent Marriage")
+## Phase 4: Endpoint Integration (The "Python Bridge")
 
-To begin telemetry ingestion, the Windows 11 Victim node was enrolled as an active agent within the SIEM environment.
+Because the lab nodes lack internet access, I implemented a "Python Bridge" strategy for deployment.
 
-- **Agent Deployment:** Utilized the Wazuh Dashboard's deployment wizard to generate a PowerShell-based installation string.
-- **Connectivity:** Directed the agent to the static SOC Manager IP (**192.168.24.174**) over port 1514 using **AES-encrypted communication**.
-- **Validation:** Verified the `WazuhSvc` is in a "Running" state on the endpoint, ensuring persistent log forwarding.
+1. **Staging:** Downloaded agents and tools to the SOC Server via the bridged interface.
+2. **Serving:** Hosted files on the internal 10.0.0.2 interface using a Python HTTP server.
+3. **Enrollment:** Agents were hard-coded to report to **10.0.0.2** over port 1514. Verified DC01 and WIN11-VIC01 as active in the dashboard.
 
 ## Phase 5: Telemetry Enrichment (Sysmon Integration)
 
-Standard Windows Event Logs are often insufficient for deep forensic analysis. To achieve visibility into process creation and network connections, I deployed **Microsoft Sysmon** to the Victim node.
+To achieve deep forensic visibility, I deployed **Microsoft Sysmon** to both the DC and Victim nodes using the **Olaf Hartong (Sysmon-Modular)** configuration.
 
-- **Configuration:** Utilized the **Olaf Hartong (Sysmon-Modular)** configuration, which is mapped to the MITRE ATT&CK framework and filters out common background noise.
-- **Ingestion:** Modified the Wazuh agent `ossec.conf` to monitor the `Microsoft-Windows-Sysmon/Operational` event channel.
+- **Ingestion:** Modified the Windows agent `ossec.conf` on both nodes to monitor the `Microsoft-Windows-Sysmon/Operational` event channel.
+- **Validation:** Confirmed Event ID 1 (Process Creation) and Event ID 3 (Network Connection) are successfully populating in the Wazuh 'Discover' tab.
 
-### Validation
-I verified the integration by executing `whoami` and `ipconfig` on the victim node and confirming the generation of **Event ID 1 (Process Creation)** within the Wazuh 'Discover' interface.
+## Phase 6: Adversary Simulation & Attack Surface
 
-## Phase 6: Adversarial Simulation Readiness
+### Kali Linux Attacker Node
+- **Networking:** Assigned static IP **10.0.0.50** on the internal segment.
+- **Role:** Acts as the primary platform for manual exploitation and network pivoting.
 
-To validate detection capabilities, I prepared the endpoint for automated adversarial execution.
-
-- **Security Override:** Utilized `DefenderControl` to permanently disable Windows Defender, ensuring simulations reflect a "post-compromise" scenario.
-- **Framework:** Deployed the **Invoke-AtomicRedTeam** execution framework via PowerShell (`Install-AtomicRedTeam -GetAtomics`).
-- **Current State:** The environment is fully staged and awaiting execution of the initial LSASS credential dumping simulation (**T1003.001**).
+### Automation
+- **Framework:** Deployed **Invoke-AtomicRedTeam** to the Victim node.
+- **Current State:** The environment is staged for its first simulation (**T1003.001: LSASS Memory Dumping**).
 
 ## Summary
 
-This SOC lab provides a robust foundation for detection engineering and security analysis. By combining Wazuh's SIEM/XDR capabilities with high-fidelity telemetry from Sysmon and automated adversarial simulation via Atomic Red Team, I have created a realistic environment for analyzing modern cyber threats.
+This architecture provides a high-fidelity environment for analyzing modern cyber threats. By isolating the detonation zone and bridging it with a dual-homed SOC server, I have created a safe yet functional platform for complex AD-security research and detection engineering.
