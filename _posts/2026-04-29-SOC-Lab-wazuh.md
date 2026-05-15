@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "SOC Lab: Building a Home SOC Lab with Wazuh"
-date: 2026-04-29
+date: 2026-05-15
 categories: [Security Operations, SOC Lab]
 tags: [SOC, Wazuh, SIEM, XDR, Sysmon, AD-Security, Virtualization]
 pin: true
