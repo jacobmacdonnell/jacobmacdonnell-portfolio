@@ -3,7 +3,7 @@ layout: post
 title: "SOC Lab: Building a Home SOC Lab with Wazuh"
 date: 2026-05-15
 categories: [Security Operations, SOC Lab]
-tags: [SOC, Wazuh, SIEM, XDR, Sysmon, AD-Security, Virtualization]
+tags: [SOC, Wazuh, SIEM, XDR, Sysmon, AD-Security, Virtualization, Zeek, Network Analysis]
 pin: true
 ---
 
@@ -18,6 +18,7 @@ The primary goal of this project was to architect and deploy a fully functional 
 - **Identity Provider:** Windows Server 2022 (DC01: LAB.local Domain)
 - **Victim Node (Attack):** Windows 11 Enterprise (WIN11-VIC01: Domain Joined)
 - **Attacker Node:** Kali Linux (Adversary Simulation)
+- **Network Telemetry:** Zeek 6.0 (LTS)
 - **Security Tooling:** Sysmon (Olaf Hartong Config), Atomic Red Team
 - **Perimeter Gateway:** UniFi Dream Machine Pro (UDM Pro)
 
@@ -67,7 +68,20 @@ To achieve deep forensic visibility, I deployed **Microsoft Sysmon** to both the
 - **Ingestion:** Modified the Windows agent `ossec.conf` on both nodes to monitor the `Microsoft-Windows-Sysmon/Operational` event channel.
 - **Validation:** Confirmed Event ID 1 (Process Creation) and Event ID 3 (Network Connection) are successfully populating in the Wazuh 'Discover' tab.
 
-## Phase 6: Adversary Simulation & Attack Surface
+## Phase 6: Network Telemetry Integration (Zeek)
+
+To provide full-spectrum network visibility and align with industry-standard network analysis methodologies, I deployed **Zeek 6.0 (LTS)** to monitor the internal lab wire.
+
+### Deployment & Stability
+- **Environment:** Resolved Python 3 conflicts on Ubuntu 24.04 by forcing the `websockets>=12.0` package installation, ensuring `zeekctl` stability.
+- **Network Binding:** Bound Zeek to the **ens37** (10.0.0.2) interface.
+- **Virtualization Workaround:** Modified the configuration with `redef ignore_checksums = T;` to prevent packet loss caused by VMware's virtualized checksum offloading.
+
+### SIEM Ingestion & Custom Logic
+- **Orchestration:** Configured Zeek for JSON output and integrated it directly into the Wazuh Manager's ingestion pipeline.
+- **Custom Detection:** Created a custom **"Catch-All" JSON decoder rule** (Level 3) in Wazuh to parse raw Zeek data. This allows for unified host and network connection alerts within a single dashboard.
+
+## Phase 7: Adversary Simulation & Attack Surface
 
 ### Kali Linux Attacker Node
 - **Networking:** Assigned static IP **10.0.0.50** on the internal segment.
